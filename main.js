@@ -8,6 +8,8 @@ router.add("/cadastro", "/pages/cadastro.html");
 router.add("/consultas", "/pages/consultas.html");
 router.add("/contatos", "/pages/contatos.html");
 
+
+router.handle()
 window.route = () => router.route()
 window.onpopstate = () => router.route();
 
