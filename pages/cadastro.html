@@ -1,0 +1,66 @@
+<div id="cadastro">
+  <form action="">
+    <fieldset>
+      <legend>Dados para Questionario</legend>
+
+      <div class="question">
+        <div>
+          <label for="name">Nome</label>
+          <input maxlength="12" type="text" name="Nome" id="name" />
+        </div>
+
+        <div>
+          <label for="sobrenome">Sobrenome</label>
+          <input maxlength="30" type="text" name="Sobrenome" id="sobrenome" />
+        </div>
+
+        <div>
+          <label for="idade">Idade</label>
+          <input
+            type="number"
+            value="0"
+            min="0"
+            max="99"
+            name="Idade"
+            id="idade"
+          />
+        </div>
+      </div>
+
+      <div id="buttons">
+        <button id="adicionar" type="submit">
+          <i class="fa-sharp fa-solid fa-plus"></i> Adicionar
+        </button>
+        <button id="resetar" type="reset">
+          <i class="fa-solid fa-xmark"></i>Limpar
+        </button>
+      </div>
+    </fieldset>
+  </form>
+
+  <div class="boxText">
+    <table id="table-1">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Sobrenome</th>
+          <th>Idade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="resultado-1"></td>
+          <td class="resultado-2"></td>
+          <td class="resultado-3"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="lista">
+    <select class="opcaodados" disabled name="" size="7" id=""></select>
+
+    <input type="submit" id="confirm" value="CONFIRMAR" />
+    <input type="submit" id="apagar" value="APAGAR" />
+  </div>
+</div>
