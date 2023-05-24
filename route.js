@@ -18,7 +18,6 @@ export class Router {
   handle() {
     const { pathname } = window.location;
     const route = this.routes[pathname] || this.routes["/"];
-    
     fetch(route)
       .then((data) => data.text())
       .then((html) => (document.querySelector("#app").innerHTML = html)); 

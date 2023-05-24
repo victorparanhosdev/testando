@@ -1,5 +1,5 @@
 export class CadastroUser {
-  
+   
     constructor() {
       this.Botoes = {
         Menu: document.querySelector(".menu"),
@@ -139,5 +139,3 @@ export class CadastroUser {
     }
 }
 
-
-new CadastroUser()
