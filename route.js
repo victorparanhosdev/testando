@@ -10,7 +10,7 @@ export class Router {
     event.preventDefault();
 
     window.history.pushState({}, "", event.target.href);
-    
+
     this.handle();
   }
 
@@ -19,9 +19,6 @@ export class Router {
     const route = this.routes[pathname] || this.routes["/"];
     fetch(route)
       .then((data) => data.text())
-      .then((html) => (document.querySelector("#app").innerHTML = html)); 
-
+      .then((html) => (document.querySelector("#app").innerHTML = html));
   }
-
-
 }

@@ -1,7 +1,7 @@
 import { Router } from "./route.js";
-import CadastroUser from "./cadastro.js";
 
 const router = new Router();
+
 
 router.add("/", "/pages/inicio.html");
 router.add("/cadastro", "/pages/cadastro.html");
@@ -11,6 +11,7 @@ router.add("/contatos", "/pages/contatos.html");
 router.handle();
 window.route = () => router.route();
 window.onpopstate = () => router.route();
+
 
 const BotoesMenu = {
   Menu: document.querySelector(".menu"),
@@ -30,14 +31,8 @@ BotoesMenu.BotaoClose.addEventListener("click", () => {
   BotoesMenu.Menu.classList.toggle("active");
 });
 
-BotoesMenu.links.forEach(
-  (link) =>
-    (link.addEventListener("click", event => {
-      event = event || window.event;
-      event.preventDefault();
-      BotoesMenu.Menu.classList.remove("active");
-      BotoesMenu.MenuHamburguer.classList.remove("active");
-    }))
-);
-
-new CadastroUser()
+BotoesMenu.links.forEach(link => link.addEventListener("click", (event) => {
+  event.preventDefault()
+  BotoesMenu.Menu.classList.remove("active")
+  BotoesMenu.MenuHamburguer.classList.remove("active");
+}));
