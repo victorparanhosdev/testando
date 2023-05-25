@@ -1,12 +1,7 @@
-export class CadastroUser {
+class CadastroUser {
    
     constructor() {
       this.Botoes = {
-        Menu: document.querySelector(".menu"),
-        MenuHamburguer: document.querySelector(".menu-hamburguer"),
-        BotaoClose: document.querySelector("i.menu-close"),
-        BotaoOpen: document.querySelector("i.menu-open"),
-        links: document.querySelectorAll(".menu ul li a"),
         resultado: document.querySelector(".resultado-1"),
         resultado2: document.querySelector(".resultado-2"),
         resultado3: document.querySelector(".resultado-3"),
@@ -35,6 +30,7 @@ export class CadastroUser {
   
     save() {
       this.Botoes.confirm.addEventListener("click", (event) => {
+        event = event || window.event
         event.preventDefault();
   
         let isNotOption =
@@ -57,6 +53,8 @@ export class CadastroUser {
           this.LimparConteudo();
         }
       });
+
+      
     }
   
     adicionar() {
@@ -91,24 +89,6 @@ export class CadastroUser {
     }
   
     clicks() {
-      this.Botoes.BotaoOpen.addEventListener("click", () => {
-        this.Botoes.MenuHamburguer.classList.toggle("active");
-        this.Botoes.Menu.classList.toggle("active");
-      });
-  
-      this.Botoes.BotaoClose.addEventListener("click", () => {
-        this.Botoes.MenuHamburguer.classList.toggle("active");
-        this.Botoes.Menu.classList.toggle("active");
-      });
-  
-      this.Botoes.links.forEach(
-        (link) =>
-          (link.onclick = (event) => {
-            event.preventDefault();
-            this.Botoes.Menu.classList.remove("active");
-            this.Botoes.MenuHamburguer.classList.remove("active");
-          })
-      );
       this.boxInput.idade.addEventListener("input", (event) => {
         this.Botoes.resultado3.textContent = event.target.value;
       });
@@ -121,12 +101,12 @@ export class CadastroUser {
         this.Botoes.resultado2.textContent = event.target.value;
       });
   
-      this.Botoes.resetar.onclick = () => this.LimparConteudo();
+      this.Botoes.resetar.addEventListener("click", () => this.LimparConteudo());
   
-      this.Botoes.apagar.onclick = () => {
+      this.Botoes.apagar.addEventListener("click", () => {
         this.boxInput.opcaodados.querySelector("option:last-child").remove();
         this.dados.pop();
-      };
+      });
     }
   
     LimparConteudo() {
@@ -139,3 +119,4 @@ export class CadastroUser {
     }
 }
 
+export default CadastroUser
