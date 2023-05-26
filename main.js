@@ -1,10 +1,12 @@
 import { Router } from "./route.js";
-
+import Cadastro from "./cadastro.js"
 const router = new Router();
 
 
 router.add("/", "/pages/inicio.html");
-router.add("/cadastro", "/pages/cadastro.html");
+router.add("/cadastro", "/pages/cadastro.html", ()=> {
+  new Cadastro()
+});
 router.add("/consultas", "/pages/consultas.html");
 router.add("/contatos", "/pages/contatos.html");
 
