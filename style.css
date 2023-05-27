@@ -150,9 +150,11 @@ button[type="reset"]{
   color: red;
 
 }
-
+.select {
+  min-height:10vh
+}
 #lista select{
-  min-height: 10vh;
+  height: 100%;
   display: block;
   width: 100%;
 
