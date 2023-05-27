@@ -152,7 +152,7 @@ button[type="reset"]{
 }
 
 #lista select{
-  min-height: 15rem;
+  min-height: 10vh;
   display: block;
   width: 100%;
 
