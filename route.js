@@ -46,7 +46,7 @@ export class Router {
           const swiper = new Swiper('.swiper', {
             // Optional parameters
             autoplay: {
-              delay: 5000,
+              delay: 2000,
             },
             mousewheel: true,
             keyboard: true,

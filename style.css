@@ -81,6 +81,7 @@ input#confirm{
   cursor: pointer;
 }
 input{
+  min-width: 10rem;
  padding: 0.5rem;
   outline: none;
   border: 1px solid white;
@@ -151,7 +152,9 @@ button[type="reset"]{
 }
 
 #lista select{
-  display: block
+  min-height: 15rem;
+  display: block;
+  width: 100%;
 
 }
 button[type="reset"]
