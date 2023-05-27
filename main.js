@@ -3,7 +3,7 @@ import Cadastro from "./cadastro.js"
 const router = new Router();
 
 
-router.add("/", "/pages/inicio.html");
+router.add("/", "/pages/inicio.html", 2);
 router.add("/cadastro", "/pages/cadastro.html", ()=> {
   new Cadastro()
 });
@@ -38,3 +38,5 @@ BotoesMenu.links.forEach(link => link.addEventListener("click", (event) => {
   BotoesMenu.Menu.classList.remove("active")
   BotoesMenu.MenuHamburguer.classList.remove("active");
 }));
+
+

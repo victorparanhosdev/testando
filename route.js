@@ -6,8 +6,11 @@ export class Router {
     this.routes[routeName] = page;
 
     if (funcao) {
+    
       this.routes[routeName] = [page, funcao];
     }
+ 
+  
   }
 
   route(event) {
@@ -38,6 +41,31 @@ export class Router {
 
         if (typeof callback === "function") {
           callback();
+        }
+        if (typeof callback === "number") {
+          const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            autoplay: {
+              delay: 5000,
+            },
+            mousewheel: true,
+            keyboard: true,
+            loop: true,
+          
+            // If we need pagination
+            pagination: {
+              el: '.swiper-pagination',
+              type: 'bullets',
+            },
+          
+            // Navigation arrows
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+          
+          
+          });
         }
       });
   }
