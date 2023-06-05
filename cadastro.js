@@ -4,6 +4,7 @@ class CadastroUser {
       resultado: document.querySelector(".resultado-1"),
       resultado2: document.querySelector(".resultado-2"),
       resultado3: document.querySelector(".resultado-3"),
+      resultado4: document.querySelector(".resultado-4"),
       confirm: document.querySelector("#confirm"),
       resetar: document.querySelector("#resetar"),
       adicionar: document.querySelector("#adicionar"),
@@ -15,6 +16,7 @@ class CadastroUser {
       sobrenome: document.querySelector("#sobrenome"),
       idade: document.querySelector("#idade"),
       opcaodados: document.querySelector(".opcaodados"),
+      selectavatar: document.querySelector("#select-avatar"),
     };
 
     this.load();
@@ -70,12 +72,13 @@ class CadastroUser {
         nome: this.boxInput.name.value,
         sobrenome: this.boxInput.sobrenome.value,
         idade: this.boxInput.idade.value,
+        avatar: this.boxInput.selectavatar.value
       };
 
       this.dados.push(dadosManipulados);
 
       let opcao = document.createElement("li");
-      const html = `Nome Completo: ${dadosManipulados.nome} ${dadosManipulados.sobrenome}/Idade: ${dadosManipulados.idade} anos`;
+      const html = `Nome Completo: ${dadosManipulados.nome} ${dadosManipulados.sobrenome}/Idade: ${dadosManipulados.idade} anos, Avatar ${dadosManipulados.avatar}`;
       opcao.textContent = html;
 
       this.boxInput.opcaodados.appendChild(opcao);
@@ -87,6 +90,9 @@ class CadastroUser {
   clicks() {
     this.boxInput.idade.addEventListener("input", (event) => {
       this.Botoes.resultado3.textContent = event.target.value;
+    });
+    this.boxInput.selectavatar.addEventListener("input", (event) => {
+      this.Botoes.resultado4.textContent = event.target.value;
     });
 
     this.boxInput.name.addEventListener("input", (event) => {
@@ -111,6 +117,7 @@ class CadastroUser {
     this.Botoes.resultado.textContent = "";
     this.Botoes.resultado2.textContent = "";
     this.Botoes.resultado3.textContent = "";
+    this.Botoes.resultado4.textContent = "";
     this.boxInput.name.value = "";
   }
 }

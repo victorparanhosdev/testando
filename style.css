@@ -22,6 +22,37 @@ img{
   border-radius: 0.5rem;
   margin-block: 1rem;
 }
+#pesquisar {
+  position: relative;
+  margin-block: 1rem;
+  padding: 2rem;
+  width: 100%;
+  background-color: hsla(0, 100%, 10%, 0.199);
+}
+#pesquisar label{
+  width: 1px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+
+}
+#consultando {
+  color: white;
+  padding-left: 3.5rem;
+  width: 100%;
+}
+
+.button-pesquisar {
+  color: white;
+  position: absolute;
+  top: 2.7rem;
+  left: 3rem;
+  font-size: 1.4rem;
+}
 
 div.swiper {
   z-index: 0;
@@ -32,7 +63,43 @@ div.swiper {
   box-shadow: 0rem 0.5rem 3rem 0.2rem hsla(0, 0%, 94%, 0.39)
 }
 
+.card-principal {
+  background-color: rgba(240, 255, 255, 0.363);
+  padding: 1rem;
+  margin-inline: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2rem;
+}
+#select-avatar{
+  height: 4rem;
+  width: fit-content;
+  background-color: transparent;
+  color: white;
+  border-radius: 0.5rem;
+  outline: none;
+}
+#select-avatar option {
+  background-color: #081d1f;
+}
+div.cards {
+  max-width: 20rem;
+  margin: auto;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0rem 0rem 0.7rem black;
+  border-radius: 0.5rem;
 
+}
+div.cards img {
+  height: auto;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  display: block;
+  width: 100%;
+  margin: 2rem auto 0;
+
+}
 
 
 html{
