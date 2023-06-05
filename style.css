@@ -16,6 +16,13 @@ img{
   object-position: center;
  
 }
+.opcaodados {
+  min-height: 15vh;
+  background-color: white;
+  border-radius: 0.5rem;
+  margin-block: 1rem;
+}
+
 div.swiper {
   z-index: 0;
   width: min(70rem, 95%);

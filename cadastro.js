@@ -32,7 +32,7 @@ class CadastroUser {
       event.preventDefault();
 
       let isNotOption =
-        this.boxInput.opcaodados.querySelector("option") == null;
+        this.boxInput.opcaodados.querySelector("li") == null;
 
       if (isNotOption) {
         alert("Por favor preencha os dados");
@@ -45,7 +45,7 @@ class CadastroUser {
         localStorage.setItem("cadastro", JSON.stringify(this.dados));
 
         this.boxInput.opcaodados
-          .querySelectorAll("option")
+          .querySelectorAll("li")
           .forEach((option) => option.remove());
         alert("Salvo com Sucesso");
         this.LimparConteudo();
@@ -100,7 +100,7 @@ class CadastroUser {
     this.Botoes.resetar.onclick = () => this.LimparConteudo();
 
     this.Botoes.apagar.onclick = () => {
-      this.boxInput.opcaodados.querySelector("option:last-child").remove();
+      this.boxInput.opcaodados.querySelector("li:last-child").remove();
       this.dados.pop();
     };
   }
