@@ -74,7 +74,7 @@ class CadastroUser {
 
       this.dados.push(dadosManipulados);
 
-      let opcao = document.createElement("option");
+      let opcao = document.createElement("li");
       const html = `Nome Completo: ${dadosManipulados.nome} ${dadosManipulados.sobrenome}/Idade: ${dadosManipulados.idade} anos`;
       opcao.textContent = html;
 
