@@ -41,10 +41,12 @@ export class Consultar {
   
       const filter = this.dados.filter(dado => {
         return dado.nome !== value.nome
+
       })
 
       this.dados = filter
       console.log(this.dados)
+      this.load()
 
     }
    
