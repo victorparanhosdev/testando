@@ -2,7 +2,8 @@ export class Consultar {
     constructor(){
       this.load()
       this.refreshRow()
- 
+
+  
       
     }
 
@@ -11,42 +12,64 @@ export class Consultar {
     this.dados = JSON.parse(localStorage.getItem("cadastro")) || []
 
     }
+    save(){
+      localStorage.setItem("cadastro", JSON.stringify(this.dados))
+      this.refreshRow()
+    }
 
     refreshRow(){
 
       this.removeAll()
+      
       this.card = document.querySelector(".card-principal")
+ 
+      let tamanho = this.card.querySelectorAll("div:has(div.empty) .empty")
+   
+        if(tamanho.length == 0){
 
+          this.card.append(this.CreatemptyRow())
+          return
     
-      this.dados.forEach(element => {
-        let row = this.createRow()
-        row.querySelector(".nomeesobrenome").textContent = `${element.nome} ${element.sobrenome}`
-        row.querySelector(".idadeano").textContent = `${element.idade} Anos`
-        row.querySelector(".avatarperfil").src = `https://api.dicebear.com/6.x/open-peeps/svg?seed=${element.avatar}`
-        row.querySelector(".closed").addEventListener("click", (value)=> {
-          this.deteleRow(value)
-        })
 
+        }else {
+          this.removeEmptyRow()
+          this.dados.forEach(element => {
+            let row = this.createRow()
+            row.querySelector(".nomeesobrenome").textContent = `${element.nome} ${element.sobrenome}`
+            row.querySelector(".idadeano").textContent = `${element.idade} Anos`
+            row.querySelector(".avatarperfil").src = `https://api.dicebear.com/6.x/open-peeps/svg?seed=${element.avatar}`
+            row.querySelector(".closed").addEventListener("click", ()=> {
+              this.deteleRow(element)
+        
+            })
+            this.card.append(row)
+    
+          });
+        }
+ 
 
-        this.card.append(row)
-
-      });
+     
       
 
 
     }
 
-    deteleRow(value){
+    deteleRow(valor){
+      let isOk = confirm("Deseja Excluir ?")
 
-  
+
+     if(isOk){
+
       const filter = this.dados.filter(dado => {
-        return dado.nome !== value.nome
-
+        return (dado.nome && dado.sobrenome) !== (valor.nome && valor.sobrenome)
       })
-
       this.dados = filter
-      console.log(this.dados)
+
+     }
+      
+      this.save()
       this.load()
+
 
     }
    
@@ -69,6 +92,20 @@ export class Consultar {
 
     return div
 
+    }
+   removeEmptyRow(){
+    document.querySelector(".card-principal").querySelectorAll("div:has(div.empty) .empty").forEach(card => card.remove())
+   }
+    CreatemptyRow(){
+
+
+      const div = document.createElement('div')
+      div.innerHTML = `<h1>Vazio</h1>`
+      div.classList.add("empty")
+      
+      
+      return div
+      
     }
 
 

@@ -189,9 +189,7 @@ input{
  
  
 }
-#table-1 th:nth-child(1){
-  min-width: 12rem;
-}
+
 #table-1 th:nth-child(2){
   width: clamp(56rem, 1vw + 1rem, 35rem);
 }
@@ -203,17 +201,20 @@ input{
 
 #table-1 td {
   margin: 2rem;
-  padding-inline: 3rem;
+  padding-inline: 1rem;
   color: white;
   word-wrap: break-word;
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 1vw + 1rem, 1.8rem);
   height: 5vh;
 
 
 }
-
-#table-1 tr td:last-child{
-  width: 5rem;
+.opcaodados li {
+  font-size: clamp(1.4rem, 1vw + 1rem, 1.8rem)
+}
+div:has(div.empty) .card-principal{
+  min-height: 30vh;
+  background-color: black;
 }
 
 #buttons {
