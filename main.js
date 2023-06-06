@@ -1,5 +1,6 @@
 import { Router } from "./route.js";
 import Cadastro from "./cadastro.js"
+
 const router = new Router();
 
 
@@ -7,7 +8,7 @@ router.add("/", "/pages/inicio.html", 2);
 router.add("/cadastro", "/pages/cadastro.html", ()=> {
   new Cadastro()
 });
-router.add("/consultas", "/pages/consultas.html");
+router.add("/consultas", "/pages/consultas.html", "consultas");
 router.add("/contatos", "/pages/contatos.html");
 
 router.handle();
@@ -21,6 +22,7 @@ const BotoesMenu = {
   BotaoClose: document.querySelector("i.menu-close"),
   BotaoOpen: document.querySelector("i.menu-open"),
   links: document.querySelectorAll(".menu ul li a"),
+  botaoOK: document.querySelector("#button-ok"),
 };
 
 BotoesMenu.BotaoOpen.addEventListener("click", () => {

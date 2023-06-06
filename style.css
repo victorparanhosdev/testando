@@ -18,41 +18,32 @@ img{
 }
 .opcaodados {
   min-height: 15vh;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.418);
   border-radius: 0.5rem;
   margin-block: 1rem;
 }
 #pesquisar {
-  position: relative;
-  margin-block: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
   padding: 2rem;
   width: 100%;
   background-color: hsla(0, 100%, 10%, 0.199);
 }
+#button-ok {
+  cursor: pointer;
+}
 #pesquisar label{
-  width: 1px;
-  height: 1px;
-  display: block;
-  position: absolute;
-  white-space: nowrap;
-  overflow: hidden;
-  top: 0;
-  left: 0;
+ text-transform: uppercase;
+ color: white;
 
 }
 #consultando {
   color: white;
-  padding-left: 3.5rem;
-  width: 100%;
+  width: 50%;
 }
-
-.button-pesquisar {
-  color: white;
-  position: absolute;
-  top: 2.7rem;
-  left: 3rem;
-  font-size: 1.4rem;
-}
+  
 
 div.swiper {
   z-index: 0;
@@ -82,7 +73,24 @@ div.swiper {
 #select-avatar option {
   background-color: #081d1f;
 }
+.closed {
+  color: red;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+h2{
+  margin-top: 1.2rem;
+}
 div.cards {
+  position: relative;
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  height: 100%;
   max-width: 20rem;
   margin: auto;
   padding: 2rem 1rem;
@@ -187,6 +195,9 @@ input{
 }
 #table-1 th:nth-child(2){
   width: clamp(56rem, 1vw + 1rem, 35rem);
+}
+#table-1 th{
+  font-size: clamp(1.4rem, 1.5vw + 0.5rem, 3.5rem);
 }
 
 
