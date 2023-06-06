@@ -40,48 +40,9 @@ export class Router {
       .then((data) => data.text())
       .then((html) => {
         document.querySelector("#app").innerHTML = html;
-
-        if(callback == "consultas"){
-          document.querySelector("#button-ok").addEventListener("click", ()=> alert("clicou"))
-
-        
-          let dados = JSON.parse(localStorage.getItem("cadastro")) || []
-          let card = document.querySelector(".card-principal")
-     
-          for( let dado of dados){
-            
-            const html = `<div class="cards">
-            <i class="fa-solid fa-xmark closed"></i>
-            <h2 class="nomeesobrenome">${dado.nome} ${dado.sobrenome} </h2>
-            <p class="idadeano">${dado.idade} anos</p>
-            <img class="avatarperfil" src="https://api.dicebear.com/6.x/open-peeps/svg?seed=${dado.avatar}" alt="foto do perfil">
-            </div>`
-            
-            card.innerHTML += html
-          }
-
-         
-
-
-          
-
-
-
-        
-      
-
-
-            
-
-      
-              
-
-          
-
-          
-          
-      
-
+    
+        if(route == "/pages/consultas.html"){   
+          callback()
 
 
   

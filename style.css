@@ -63,7 +63,6 @@ div.swiper {
   gap: 2rem;
 }
 #select-avatar{
-  height: 4rem;
   width: fit-content;
   background-color: transparent;
   color: white;
@@ -197,7 +196,7 @@ input{
   width: clamp(56rem, 1vw + 1rem, 35rem);
 }
 #table-1 th{
-  font-size: clamp(1.4rem, 1.5vw + 0.5rem, 3.5rem);
+  font-size: clamp(1.4rem, 1.5vw + 0.5rem, 2rem);
 }
 
 
