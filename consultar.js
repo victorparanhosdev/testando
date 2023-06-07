@@ -49,6 +49,8 @@ export class Consultar {
           (dado.nome && dado.sobrenome) !== (valor.nome && valor.sobrenome)
         );
       });
+
+    
       this.dados = filter;
     }
 
