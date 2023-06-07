@@ -212,7 +212,7 @@ input{
 .opcaodados li {
   font-size: clamp(1.4rem, 1vw + 1rem, 1.8rem)
 }
-div:has(div.empty) .card-principal{
+.card-principal:has(div.empty){
   min-height: 30vh;
   background-color: black;
 }
