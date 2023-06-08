@@ -23,25 +23,34 @@ img{
   margin-block: 1rem;
 }
 #pesquisar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  padding: 2rem;
-  width: 100%;
-  background-color: hsla(0, 100%, 10%, 0.199);
+position: relative;
+max-width: 50vw;
+margin: 2rem auto;
+
+
 }
-#button-ok {
-  cursor: pointer;
+
+.lupa {
+  color: white;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 #pesquisar label{
- text-transform: uppercase;
- color: white;
+ width: 1px;
+ height: 1px;
+ margin: -1px;
+ white-space: nowrap;
+ clip: rect(0,0,0,0);
+  overflow: hidden;
+  border-width: 0;
 
 }
 #consultando {
   color: white;
-  width: 50%;
+  width: 100%;
+  padding-right: 3.5rem;
+  height: 3.5rem;
 }
   
 
@@ -85,6 +94,7 @@ h2{
   margin-top: 1.2rem;
 }
 div.cards {
+  cursor: pointer;
   position: relative;
   display: flex;
     flex-direction: column;
@@ -94,10 +104,20 @@ div.cards {
   margin: auto;
   padding: 2rem 1rem;
   text-align: center;
+  background-color: hsla(167, 54%, 27%, 0.8);
   box-shadow: 0rem 0rem 0.7rem black;
   border-radius: 0.5rem;
+  transition-property: opacity, scale;
+  transition-duration: 0.2s;
 
 }
+
+.card-principal:has(.cards:hover) .cards:not(:hover) {
+  opacity: .6;
+  scale: .98;
+}
+
+
 div.cards img {
   height: auto;
   border-radius: 50%;

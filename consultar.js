@@ -2,6 +2,7 @@ export class Consultar {
   constructor() {
     this.load();
     this.refreshRow();
+    this.filtrar();
   }
 
   load() {
@@ -9,10 +10,12 @@ export class Consultar {
   }
   save() {
     localStorage.setItem("cadastro", JSON.stringify(this.dados));
-    this.refreshRow();
+    this.refreshRow()
+    
   }
 
   refreshRow() {
+
     this.removeAll();
     this.removeEmptyAll();
     this.card = document.querySelector(".card-principal");
@@ -50,10 +53,10 @@ export class Consultar {
         );
       });
 
-    
+
       this.dados = filter;
     }
-
+   
     this.save();
     this.load();
   }
@@ -91,4 +94,72 @@ export class Consultar {
 
     return div;
   }
+
+
+  filtrar() {
+    const input = document.querySelector('#consultando')
+
+
+
+    input.addEventListener("input", () => {
+      const cards = document.querySelectorAll('.cards')
+      const valor = input.value.toLowerCase()
+
+      for (let card of cards) {
+        if (input == '') {
+
+
+          card.style.display = 'block'
+
+
+
+
+        } else {
+
+
+
+          let title = card.querySelector(".nomeesobrenome").textContent.toLowerCase()
+
+
+          if (title.includes(valor)) {
+
+            card.style.display = "block"
+
+
+
+          } else {
+
+            card.style.display = "none"
+
+          }
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+
+
+      }
+
+
+
+    })
+
+
+  }
+
+
+
 }
+
+
+

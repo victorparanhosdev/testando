@@ -45,9 +45,3 @@ BotoesMenu.links.forEach(link => link.addEventListener("click", (event) => {
 }));
 
 
-const objson = '{"name": "John", "age": 30}'
-
-const convert = JSON.parse(objson)
-
-const obj = JSON.stringify(convert)
-console.log(obj)
