@@ -99,13 +99,33 @@ export class Consultar {
   filtrar() {
     const input = document.querySelector('#consultando')
 
-
+    
 
     input.addEventListener("input", () => {
       const cards = document.querySelectorAll('.cards')
       const valor = input.value.toLowerCase()
+      
+      cards.forEach(div => {
+        let display = div.style.display; // obtém o valor do atributo display da div
+      
+        if (display === "block") {
+          console.log("BLOCK")
+          return
+        }
+        
+        if(display === "none") {
+          return console.log("NONE")
+        }
+
+
+
+      });
+   
 
       for (let card of cards) {
+
+        
+
         if (input == '') {
 
 
@@ -128,36 +148,22 @@ export class Consultar {
 
 
           } else {
-
-            card.style.display = "none"
+            card.style.display = "none"   
 
           }
 
 
-
-
-
-
-
-
-
-
-
-
         }
-
-
 
       }
 
-
+  
+     
+          
 
     })
 
-
   }
-
-
 
 }
 
