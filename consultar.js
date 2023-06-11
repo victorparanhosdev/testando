@@ -99,64 +99,68 @@ export class Consultar {
   filtrar() {
     const input = document.querySelector('#consultando')
 
+    const cards = document.querySelectorAll('.cards')
+    let arraynew = Array.from(cards)
+
+    function verificarseExisteClasse(array, classe){
+      return array.some(item => item.classList.contains(classe));
+      }
+
+      arraynew.forEach(card => {
+
+        card.addEventListener("click", (event)=> {
     
 
-    input.addEventListener("input", () => {
+          if(!verificarseExisteClasse(arraynew, 'virar')){
+            card.classList.add("virar")
+            console.log("entrei")
+            return
+
+          }
+
+          if(event.currentTarget.classList.contains("virar")){
+
+            card.classList.remove("virar")
+        
+          }else {
+            arraynew.forEach(carde=> {
+              carde.classList.remove("virar")
+            })
+
+            if(!event.currentTarget.classList.contains("virar")){
+              card.classList.add("virar")
+            }
+
+          }
+          
+        })
+
+      
+      })
+     
+
+      
+
+
+      input.addEventListener("input", () => {
       const cards = document.querySelectorAll('.cards')
+
+    
       const valor = input.value.toLowerCase()
       
-      cards.forEach(div => {
-        let display = div.style.display; // obtém o valor do atributo display da div
-      
-        if (display === "block") {
-          console.log("BLOCK")
-          return
-        }
-        
-        if(display === "none") {
-          return console.log("NONE")
-        }
-
-
-
-      });
-   
-
-      
-
-
-
-      for (let card of cards) {
-
-        
+     for (let card of cards) {
 
         if (input == '') {
-
-
-          card.style.display = 'block'
-
-
-
-
+        card.style.display = 'block'
         } else {
-
-
-
           let title = card.querySelector(".nomeesobrenome").textContent.toLowerCase()
-
-
           if (title.includes(valor)) {
-
-
-            card.style.display = "block"
+           card.style.display = "block"
             
             if(document.querySelector(".card-principal").classList.contains("empty")){
               document.querySelector(".card-principal").classList.remove("empty")
             }
-
             card.style.display = "block"
-
-
 
           } else {
             card.style.display = "none"   
