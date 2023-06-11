@@ -171,11 +171,8 @@ export class Consultar {
 
         }
 
-<<<<<<< HEAD
         
 
-=======
->>>>>>> ca61a464bbc357150a65fba7d954780bc1d2a291
       }
 
   
