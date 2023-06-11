@@ -71,6 +71,29 @@ div.swiper {
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 2rem;
 }
+
+.card-principal.empty {
+  min-height: 50vh;
+  
+}
+.card-principal .vazio{
+  display: none;
+}
+.card-principal.empty .vazio {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.card-principal.empty .vazio span {
+  font-size: clamp(3rem, 11vw + 2rem, 7rem);
+  font-weight: 700;
+  color: white;
+  font-family: sans-serif;
+  white-space: nowrap;
+
+}
+
 #select-avatar{
   width: fit-content;
   background-color: transparent;

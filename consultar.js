@@ -105,6 +105,10 @@ export class Consultar {
       const cards = document.querySelectorAll('.cards')
       const valor = input.value.toLowerCase()
 
+      
+
+
+
       for (let card of cards) {
         if (input == '') {
 
@@ -123,6 +127,13 @@ export class Consultar {
 
           if (title.includes(valor)) {
 
+
+            card.style.display = "block"
+            
+            if(document.querySelector(".card-principal").classList.contains("empty")){
+              document.querySelector(".card-principal").classList.remove("empty")
+            }
+
             card.style.display = "block"
 
 
@@ -130,6 +141,11 @@ export class Consultar {
           } else {
 
             card.style.display = "none"
+
+            if(Array.from(cards).every(cardo => cardo.style.display === 'none')){
+              document.querySelector(".card-principal").classList.add("empty")
+
+            }
 
           }
 
@@ -146,7 +162,7 @@ export class Consultar {
 
         }
 
-
+        
 
       }
 
