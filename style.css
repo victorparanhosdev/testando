@@ -62,13 +62,15 @@ div.swiper {
   border-radius: 2rem;
   box-shadow: 0rem 0.5rem 3rem 0.2rem hsla(0, 0%, 94%, 0.39)
 }
-
+.nomeesobrenome {
+  font-size:  clamp(1.2rem, 6vw + 1rem, 2rem);
+}
 .card-principal {
   background-color: rgba(240, 255, 255, 0.363);
   padding: 1rem;
-  margin-inline: 1rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
@@ -120,11 +122,8 @@ div.cards {
   cursor: pointer;
   position: relative;
   display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  height: 100%;
-  max-width: 20rem;
-  margin: auto;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 2rem 1rem;
   text-align: center;
   background-color: hsla(167, 54%, 27%, 0.8);
@@ -132,6 +131,8 @@ div.cards {
   border-radius: 0.5rem;
   transition-property: opacity, scale;
   transition-duration: 0.2s;
+  flex-basis: 22rem;
+  min-width: 20rem;
 
 }
 

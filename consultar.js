@@ -99,17 +99,37 @@ export class Consultar {
   filtrar() {
     const input = document.querySelector('#consultando')
 
-
+    
 
     input.addEventListener("input", () => {
       const cards = document.querySelectorAll('.cards')
       const valor = input.value.toLowerCase()
+      
+      cards.forEach(div => {
+        let display = div.style.display; // obtém o valor do atributo display da div
+      
+        if (display === "block") {
+          console.log("BLOCK")
+          return
+        }
+        
+        if(display === "none") {
+          return console.log("NONE")
+        }
+
+
+
+      });
+   
 
       
 
 
 
       for (let card of cards) {
+
+        
+
         if (input == '') {
 
 
@@ -139,8 +159,7 @@ export class Consultar {
 
 
           } else {
-
-            card.style.display = "none"
+            card.style.display = "none"   
 
             if(Array.from(cards).every(cardo => cardo.style.display === 'none')){
               document.querySelector(".card-principal").classList.add("empty")
@@ -150,30 +169,22 @@ export class Consultar {
           }
 
 
-
-
-
-
-
-
-
-
-
-
         }
 
+<<<<<<< HEAD
         
 
+=======
+>>>>>>> ca61a464bbc357150a65fba7d954780bc1d2a291
       }
 
-
+  
+     
+          
 
     })
 
-
   }
-
-
 
 }
 
