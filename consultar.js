@@ -13,6 +13,12 @@ export class Consultar {
     this.refreshRow()
     
   }
+  createback(){
+    const img = document.createElement("img")
+    img.src = "https://source.unsplash.com/150x100/?airplane",
+    img.alt = "Foto Aleatoria"
+    return img
+  }
 
   refreshRow() {
 
@@ -112,14 +118,16 @@ export class Consultar {
     
 
           if(!verificarseExisteClasse(arraynew, 'virar')){
+          
+          
             card.classList.add("virar")
-            console.log("entrei")
+
             return
 
           }
 
           if(event.currentTarget.classList.contains("virar")){
-
+            
             card.classList.remove("virar")
         
           }else {
@@ -129,6 +137,9 @@ export class Consultar {
 
             if(!event.currentTarget.classList.contains("virar")){
               card.classList.add("virar")
+          
+        
+              
             }
 
           }
@@ -186,6 +197,7 @@ export class Consultar {
     })
 
   }
+
 
 }
 
