@@ -1,14 +1,11 @@
 
-
-
-
 export class Consultar {
-
-
+  
   constructor() {
     this.load();
     this.refreshRow();
     this.filtrar();
+   
 
   }
 
@@ -25,7 +22,6 @@ export class Consultar {
     
     const tamanho = this.dados;
     let imagemrandomica = ['nature', 'architecture', 'food', 'people', 'technology']
-
     let random = Math.floor(Math.random() * imagemrandomica.length)
    
 
@@ -118,6 +114,7 @@ export class Consultar {
   }
 
 
+
   filtrar() {
     const input = document.querySelector('#consultando')
 
@@ -131,8 +128,9 @@ export class Consultar {
       arraynew.forEach(card => {
 
         card.addEventListener("click", (event)=> {
-       
 
+    
+        
           if(!verificarseExisteClasse(arraynew, 'virar')){
           
       
@@ -159,6 +157,7 @@ export class Consultar {
             }
 
           }
+          
           
         })
 
