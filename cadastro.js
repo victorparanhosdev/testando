@@ -72,7 +72,8 @@ class CadastroUser {
         nome: this.boxInput.name.value,
         sobrenome: this.boxInput.sobrenome.value,
         idade: this.boxInput.idade.value,
-        avatar: this.boxInput.selectavatar.value
+        avatar: this.boxInput.selectavatar.value,
+
       };
 
       this.dados.push(dadosManipulados);
@@ -83,7 +84,7 @@ class CadastroUser {
 
       this.boxInput.opcaodados.appendChild(opcao);
       this.LimparConteudo();
-      this.boxInput.name.focus();
+  
     });
   }
 

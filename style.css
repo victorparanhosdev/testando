@@ -14,6 +14,7 @@ img{
   display: block;
   object-fit: cover;
   object-position: center;
+  
  
 }
 .opcaodados {
@@ -97,21 +98,26 @@ div.swiper {
 }
 
 .cards.virar {
-  transform: rotateY(360deg);
+  transform: rotateY(180deg);
   background-color: hsla(570, 87%,15%);
-  height: 30rem;
+  height: 32rem;
   padding: 0;
-
+  
 
 }
 
-.cards.virar img {
-  border-radius: 100%;
-  height: 100%;
-  border-radius: 0.5rem;
-  margin: 0;
-  object-fit: contain;  
+
+.cards.virar .cards-1 {
+  display: none;
 }
+div.cards .cards-2{
+  display: none;
+}
+div.cards.virar .cards-2{
+  display: block;
+
+}
+
 
 #select-avatar{
   width: fit-content;
@@ -135,12 +141,18 @@ div.swiper {
 h2{
   margin-top: 1.2rem;
 }
+div.cards .cards-1 {
+  display: grid;
+  align-content: space-between;
+  gap: 1.5rem;
+}
 div.cards {
+  perspective: 1000px;
+  transform-style: preserve-3d;
   cursor: pointer;
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-content: space-between;
   padding: 2rem 1rem;
   text-align: center;
   background-color: hsla(167, 54%, 27%, 0.8);
@@ -148,25 +160,30 @@ div.cards {
   border-radius: 0.5rem;
   transition-property: opacity, scale, transform;
 
-  transform: rotateY(0);
-  transition-duration: 0.2s;
+
+  height: 32rem;
+  transform: rotateY(0deg);
+  transition-duration: 0.3s;
   width: clamp(15rem, 10vw + 10rem, 20rem);
 
 }
+
 
 .card-principal:has(.cards:hover) .cards:not(:hover) {
   opacity: .6;
   scale: .98;
 }
 
+div.cards .cards-2 img {
+  transform: scaleX(-1);
+}
+div.cards .cards-1 img {
 
-div.cards img {
   height: auto;
+  margin: 1rem auto;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.13);
-  display: block;
   width: 100%;
-  margin: 2rem auto 0;
 
 }
 

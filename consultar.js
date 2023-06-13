@@ -1,8 +1,15 @@
+
+
+
+
 export class Consultar {
+
+
   constructor() {
     this.load();
     this.refreshRow();
     this.filtrar();
+
   }
 
   load() {
@@ -13,21 +20,20 @@ export class Consultar {
     this.refreshRow()
     
   }
-  createback(){
-    const img = document.createElement("img")
-    img.src = "https://source.unsplash.com/150x100/?airplane",
-    img.alt = "Foto Aleatoria"
-    return img
-  }
 
   refreshRow() {
+    
+    const tamanho = this.dados;
+    let imagemrandomica = ['nature', 'architecture', 'food', 'people', 'technology']
+
+    let random = Math.floor(Math.random() * imagemrandomica.length)
+   
 
     this.removeAll();
     this.removeEmptyAll();
     this.card = document.querySelector(".card-principal");
 
-    const tamanho = this.dados;
-
+   
     if (tamanho.length == 0) {
       this.card.append(this.CreatemptyRow());
       return;
@@ -41,6 +47,8 @@ export class Consultar {
         row.querySelector(
           ".avatarperfil"
         ).src = `https://api.dicebear.com/6.x/open-peeps/svg?seed=${element.avatar}`;
+        row.querySelector(".img-random").src = `https://source.unsplash.com/200x320/?${imagemrandomica[random]}`
+
         row.querySelector(".closed").addEventListener("click", () => {
           this.deteleRow(element);
         });
@@ -62,9 +70,12 @@ export class Consultar {
 
       this.dados = filter;
     }
+      this.save();
+      this.load();
+      this.filtrar();
+    
    
-    this.save();
-    this.load();
+    
   }
   removeEmptyAll() {
     document
@@ -82,11 +93,16 @@ export class Consultar {
   createRow() {
     const div = document.createElement("div");
 
-    const html = `<i class="fa-solid fa-xmark closed"></i>
+    const html = `<div class="cards-1">
+    <i class="fa-solid fa-xmark closed"></i>
     <h2 class="nomeesobrenome">Victor Paranhos</h2>
     <p class="idadeano">28 anos</p>
-    <img class="avatarperfil" src="https://api.dicebear.com/6.x/open-peeps/svg?seed=Salem" alt="foto do perfil">`;
-    div.setAttribute("class", "cards");
+    <img class="avatarperfil" src="https://api.dicebear.com/6.x/open-peeps/svg?seed=Salem" alt="foto do perfil">
+    </div>
+    <div class="cards-2">
+    <img class="img-random" src="https://source.unsplash.com/200x320/?airplane" alt="foto">
+    </div>`;
+    div.setAttribute("class", "cards")
 
     div.innerHTML = html;
 
@@ -115,11 +131,11 @@ export class Consultar {
       arraynew.forEach(card => {
 
         card.addEventListener("click", (event)=> {
-    
+       
 
           if(!verificarseExisteClasse(arraynew, 'virar')){
           
-          
+      
             card.classList.add("virar")
 
             return
