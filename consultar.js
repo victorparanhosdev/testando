@@ -1,12 +1,12 @@
 
 export class Consultar {
-  
+
   constructor() {
     this.load();
     this.refreshRow();
     this.filtrar();
-   
 
+ 
   }
 
   load() {
@@ -18,22 +18,28 @@ export class Consultar {
     
   }
 
+  FunRandomico() {
+    let imagemrandomica = ['nature', 'architecture', 'food', 'people', 'technology']
+    let aleatorios = Math.floor(Math.random() * imagemrandomica.length);
+    let categoriaSelecionada = imagemrandomica[aleatorios]
+    return categoriaSelecionada
+  }
+
   refreshRow() {
     
     const tamanho = this.dados;
-    let imagemrandomica = ['nature', 'architecture', 'food', 'people', 'technology']
-    let random = Math.floor(Math.random() * imagemrandomica.length)
-   
 
     this.removeAll();
     this.removeEmptyAll();
+
     this.card = document.querySelector(".card-principal");
 
-   
     if (tamanho.length == 0) {
       this.card.append(this.CreatemptyRow());
       return;
     } else {
+
+
       this.dados.forEach((element) => {
         let row = this.createRow();
         row.querySelector(
@@ -43,8 +49,25 @@ export class Consultar {
         row.querySelector(
           ".avatarperfil"
         ).src = `https://api.dicebear.com/6.x/open-peeps/svg?seed=${element.avatar}`;
-        row.querySelector(".img-random").src = `https://source.unsplash.com/200x320/?${imagemrandomica[random]}`
 
+        row.querySelector(".img-random").src = `https://source.unsplash.com/200x320/?${this.FunRandomico()}`
+
+        row.querySelector(".cards-1").addEventListener("click", (event)=> {
+
+          let random = this.FunRandomico()
+          row.querySelector(".img-random").src = `https://source.unsplash.com/200x320/?${random}`
+          console.log(random)
+          
+        })
+        row.querySelector(".cards-2").addEventListener("click", (event)=> {
+
+          let random = this.FunRandomico()
+          row.querySelector(".img-random").src = `https://source.unsplash.com/200x320/?${random}`
+          console.log(random)
+          
+        })
+
+ 
         row.querySelector(".closed").addEventListener("click", () => {
           this.deteleRow(element);
         });
@@ -130,7 +153,7 @@ export class Consultar {
         card.addEventListener("click", (event)=> {
 
     
-        
+      
           if(!verificarseExisteClasse(arraynew, 'virar')){
           
       
@@ -210,6 +233,7 @@ export class Consultar {
           
 
     })
+
 
   }
 
