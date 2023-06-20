@@ -60,21 +60,14 @@ export class Router {
             mousewheel: true,
             keyboard: true,
             loop: true,
-          
-            // If we need pagination
-            pagination: {
-              el: '.swiper-pagination',
-              type: 'custom',
-              
-            
-            },
+                  
           
             // Navigation arrows
             navigation: {
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
             },
-
+    
             effect: 'cards',
               cardsEffect: {
               slideShadows: false,
