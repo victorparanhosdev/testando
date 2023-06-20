@@ -186,10 +186,6 @@ export class Consultar {
       const cards = document.querySelectorAll('.cards')
       const valor = input.value.toLowerCase() 
       
-      console.log(event)
-     
-
-
       for (let card of cards) {
         if (input == '') {
         card.style.display = 'block'

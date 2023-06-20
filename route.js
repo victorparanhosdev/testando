@@ -64,7 +64,9 @@ export class Router {
             // If we need pagination
             pagination: {
               el: '.swiper-pagination',
-              type: 'bullets',
+              type: 'custom',
+              
+            
             },
           
             // Navigation arrows
@@ -72,7 +74,11 @@ export class Router {
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
             },
-          
+
+            effect: 'cards',
+              cardsEffect: {
+              slideShadows: false,
+            },
           
           });
         }
