@@ -19,7 +19,7 @@ export class Consultar {
   }
 
   FunRandomico() {
-    let imagemrandomica = ['nature', 'architecture', 'food', 'people', 'technology']
+    let imagemrandomica = ['wallpaper','praias','países','cores','animais','frutas','nature', 'architecture', 'food', 'people', 'technology', 'aviao', 'carros', 'academia', 'livros', "social"]
     let aleatorios = Math.floor(Math.random() * imagemrandomica.length);
     let categoriaSelecionada = imagemrandomica[aleatorios]
     return categoriaSelecionada
@@ -39,8 +39,10 @@ export class Consultar {
       return;
     } else {
 
-
+      let random = this.FunRandomico()
       this.dados.forEach((element) => {
+       
+       
         let row = this.createRow();
         row.querySelector(
           ".nomeesobrenome"
@@ -53,17 +55,17 @@ export class Consultar {
         row.querySelector(".img-random").src = `https://source.unsplash.com/200x320/?${this.FunRandomico()}`
 
         row.querySelector(".cards-1").addEventListener("click", (event)=> {
-
-          let random = this.FunRandomico()
-          row.querySelector(".img-random").src = `https://source.unsplash.com/200x320/?${random}`
-          console.log(random)
+                
+          row.querySelector(".cards .cards-2 .img-random").src = `https://source.unsplash.com/200x320/?${random}`
+          random = this.FunRandomico()
+      
           
         })
         row.querySelector(".cards-2").addEventListener("click", (event)=> {
 
-          let random = this.FunRandomico()
-          row.querySelector(".img-random").src = `https://source.unsplash.com/200x320/?${random}`
-          console.log(random)
+         
+        event.currentTarget.querySelector(".img-random").src = `https://source.unsplash.com/200x320/?${random}`
+        random = this.FunRandomico()
           
         })
 
@@ -152,19 +154,12 @@ export class Consultar {
 
         card.addEventListener("click", (event)=> {
 
-    
-      
           if(!verificarseExisteClasse(arraynew, 'virar')){
-          
-      
             card.classList.add("virar")
-
             return
-
           }
 
           if(event.currentTarget.classList.contains("virar")){
-            
             card.classList.remove("virar")
         
           }else {
@@ -174,7 +169,6 @@ export class Consultar {
 
             if(!event.currentTarget.classList.contains("virar")){
               card.classList.add("virar")
-          
         
               
             }
@@ -187,51 +181,35 @@ export class Consultar {
       
       })
      
+      input.addEventListener("input", (event) => {
 
-      
-
-
-      input.addEventListener("input", () => {
       const cards = document.querySelectorAll('.cards')
-
-    
-      const valor = input.value.toLowerCase()
+      const valor = input.value.toLowerCase() 
       
-     for (let card of cards) {
+      console.log(event)
+     
 
+
+      for (let card of cards) {
         if (input == '') {
         card.style.display = 'block'
         } else {
           let title = card.querySelector(".nomeesobrenome").textContent.toLowerCase()
           if (title.includes(valor)) {
            card.style.display = "block"
-            
             if(document.querySelector(".card-principal").classList.contains("empty")){
               document.querySelector(".card-principal").classList.remove("empty")
             }
-            card.style.display = "block"
-
+    
           } else {
             card.style.display = "none"   
 
             if(Array.from(cards).every(cardo => cardo.style.display === 'none')){
               document.querySelector(".card-principal").classList.add("empty")
-
             }
-
           }
-
-
         }
-
-        
-
       }
-
-  
-     
-          
-
     })
 
 
